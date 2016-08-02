@@ -3,3 +3,4 @@ staticfiles
 .env
 venv/
 static/
+*_settings.py

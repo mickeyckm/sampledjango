@@ -169,11 +169,16 @@ ACCOUNT_EMAIL_REQUIRED = True
 # Email
 
 EMAIL_HOST = 'smtp.sendgrid.com'
-EMAIL_HOST_USER = ''
-EMAIL_MAIN = 'noreply@sampledjango.com'
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_USER = os.environ['SENDGRID_USERNAME']
+EMAIL_HOST_PASSWORD = os.environ['SENDGRID_PASSWORD']
+EMAIL_MAIN = 'noreply@sampledjangoapp.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 
+# Dev
+try:
+    from local_settings import *
+except ImportError:
+    pass
 
